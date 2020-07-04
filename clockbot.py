@@ -5,7 +5,7 @@ from discord.utils import get
 import asyncio
 from time import sleep
 from colorsys import hls_to_rgb
-import youtube_dl
+
 import os
 import requests
 import random
