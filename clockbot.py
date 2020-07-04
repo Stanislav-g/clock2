@@ -7,7 +7,7 @@ from time import sleep
 from colorsys import hls_to_rgb
 
 import os
-import requests
+import random
 
 from random import randint, choice, choices
 import io
