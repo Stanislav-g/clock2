@@ -13,8 +13,8 @@ from random import randint, choice, choices
 import io
 import sqlite3
 import random as r
-import requests
-import io
+
+
 
 
 
