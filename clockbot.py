@@ -19,7 +19,7 @@ import random as r
 
 
 
-client = commands.Bot( command_prefix = '-')
+client = commands.Bot( command_prefix = '!')
 client.remove_command('help')
 
 
@@ -50,8 +50,8 @@ async def clock(ctx, now, time ):
             if end != vremiya:
                 endt = end *60
                 endth = endt *60
-                endthe = int(endth +720)
-                await asyncio.sleep(endthe)
+                
+                await asyncio.sleep(endth)
                 await ctx.author.send(f'Вставай')
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
@@ -64,7 +64,8 @@ async def clock(ctx, now, time ):
             else:
                 sleeptimetwo = end *60
                 endtwo = end *60
-                await asyncio.sleep(endtwo)
+                endthe = int(endtwo +720)
+                await asyncio.sleep(endthe)
                 await ctx.author.send(f'Вставай')
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
@@ -96,8 +97,8 @@ async def clock(ctx, now, time ):
             if end != vremiya:
                 endt = end *60
                 endth = endt *60
-                endthe = int(endth +720)
-                await asyncio.sleep(endthe)
+                
+                await asyncio.sleep(endth)
                 await ctx.author.send(f'Вставай')
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
@@ -108,9 +109,11 @@ async def clock(ctx, now, time ):
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
             else:
+                
                 endt = end *60
                 endth = endt *60
-                await asyncio.sleep(endth)
+                endthe = int(endth +720)
+                await asyncio.sleep(endthe)
                 await ctx.author.send(f'Вставай')
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
