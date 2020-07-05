@@ -140,7 +140,7 @@ async def clock(ctx, now, time ):
 @client.command()
 async def clock2(ctx, time ):
     await ctx.author.send(f'Меня создал Nitagas')
-    nowtime = int(datetime.time())
+    nowtime = datetime.time()
     await ctx.author.send(nowtime)
     vremiya = (['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24'])
     getup = int(time)
