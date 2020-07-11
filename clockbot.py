@@ -162,7 +162,8 @@ async def help(ctx):
 
     emb.add_field( name = 'Информация', value = '''
         !clock - будильник. Пример: !clock 1634 1635 !clock (время сейчас) (время вставать)
-    await ctx.author.send(embed = emb)
+        
+    await ctx.send(embed = emb)
 
                 
 
