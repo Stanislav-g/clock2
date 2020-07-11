@@ -18,7 +18,6 @@ import random as r
 
 
 
-
 client = commands.Bot( command_prefix = '!')
 client.remove_command('help')
 
