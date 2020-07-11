@@ -86,26 +86,17 @@ async def clock(ctx, now, time ):
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
         else:
-            f = str(nowtime)
-            ff = f[0], f[1]
-            s = str(getup)
-            ss = f[0], f[1]
-            if ff > ss and ss < 50:
-                first = sleeptime - 40
-                await asyncio.sleep(first)
-                await ctx.author.send(f'hihihihi')
-            else:
-                sleeptimesec = sleeptime *60#минуты
-                await asyncio.sleep(sleeptimesec)
-                await ctx.author.send(f'Вставай')
-                await asyncio.sleep(1)
-                await ctx.author.send(f'Вставай')
-                await asyncio.sleep(1)
-                await ctx.author.send(f'Вставай')
-                await asyncio.sleep(1)
-                await ctx.author.send(f'Вставай')
-                await asyncio.sleep(1)
-                await ctx.author.send(f'Вставай')
+            sleeptimesec = sleeptime *60#минуты
+            await asyncio.sleep(sleeptimesec)
+            await ctx.author.send(f'Вставай')
+            await asyncio.sleep(1)
+            await ctx.author.send(f'Вставай')
+            await asyncio.sleep(1)
+            await ctx.author.send(f'Вставай')
+            await asyncio.sleep(1)
+            await ctx.author.send(f'Вставай'
+            await asyncio.sleep(1)
+            await ctx.author.send(f'Вставай')
     else:
         sleeptime = float(day - nowtime + getup)
        
