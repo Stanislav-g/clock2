@@ -76,9 +76,9 @@ async def clock(ctx, now, time ):
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
         else:
-            f = nowtime
+            f = str(nowtime)
             ff = f[0], f[1]
-            s = getup
+            s = str(getup)
             ss = f[0], f[1]
             if ff > ss and ss < 50:
                 first = sleeptime - 40
