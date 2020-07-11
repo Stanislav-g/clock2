@@ -31,25 +31,6 @@ async def on_redy():
 
 
 
-@client.command()
-async def status(ctx):
-    await ctx.channel.purge( limit = 1 )
-    while True:
-        await client.change_presence(activity=discord.Game(name='!help'))
-        await asyncio.sleep(60)
-
-        
-#help
-@client.command(pass_context = True)
-async def help(ctx):
-    await ctx.channel.purge(limit = 1)
-    emb = discord.Embed( 
-        title = 'Навигация по командам :clipboard:',
-        color = 0x7aa13d
-     )
-    
-    emb.add_field( name = '__**Информация**__', value = '''
-        ***!clock*** - будильник. Пример: !clock 1634 1635 !clock (время сейчас) (время вставать) 
 
 @client.command()
 async def clock(ctx, now, time ):
@@ -148,10 +129,6 @@ async def clock(ctx, now, time ):
             await ctx.author.send(f'Вставай')
             await asyncio.sleep(1)
             await ctx.author.send(f'Вставай')
-
-
-
-
 
 token= os.environ.get('BOT_TOKEN')
 client.run( token )
