@@ -24,7 +24,6 @@ client.remove_command('help')
 
 
 @client.event
-
 async def on_redy():
     print( 'Bot connected')
 
@@ -131,7 +130,7 @@ async def clock(ctx, now, time ):
             await ctx.author.send(f'Вставай')
             
             
-@Client.event
+@client.event
 async def on_raw_reaction_add(payload):
     if payload.message_id == 728658937905414234: # ID Сообщения
         guild = client.get_guild(payload.guild_id)
