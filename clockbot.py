@@ -143,27 +143,7 @@ async def on_raw_reaction_add(payload):
                 await member.add_roles(role)
                 
                 
-@Client.command()
-async def status(ctx):
-    await ctx.channel.purge( limit = 1 )
-    while True:
-        await client.change_presence(activity=discord.Game(name='!help'))
-        await asyncio.sleep(60)
 
-
-#help
-@client.command(pass_context = True)
-async def help(ctx):
-    await ctx.channel.purge(limit = 1)
-    emb = discord.Embed( 
-        title = 'Навигация по командам ',
-        color = 0x7aa13d
-     )
-
-    emb.add_field( name = 'Информация', value = '''
-        !clock - будильник. Пример: !clock 1634 1635 !clock (время сейчас) (время вставать)
-        
-    await ctx.send(embed = emb)
 
                 
 
