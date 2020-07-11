@@ -28,7 +28,18 @@ async def on_redy():
     print( 'Bot connected')
 
 
-
+#help
+@client.command(pass_context = True)
+async def help(ctx):
+    await ctx.channel.purge(limit = 1)
+    emb = discord.Embed( 
+        title = 'Навигация по командам :clipboard:',
+        color = 0x7aa13d
+     )
+    
+    emb.add_field( name = '__**Информация**__', value = '''
+        ***!help*** - хелп
+        ***!clock*** - будильник !clock (время сейчас) (время потом) пример: !clock 1923 1924
 
 
 
