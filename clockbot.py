@@ -5,20 +5,21 @@ from discord.utils import get
 import asyncio
 from time import sleep
 from colorsys import hls_to_rgb
-
+import youtube_dl
 import os
+import requests
 import random
-
 from random import randint, choice, choices
 import io
 import sqlite3
 import random as r
+import requests
+import io
 
 
 
 
-
-client = commands.Bot( command_prefix = '!')
+client = commands.Bot( command_prefix = '-')
 client.remove_command('help')
 
 
@@ -28,25 +29,13 @@ async def on_redy():
     print( 'Bot connected')
 
 
-#help
-@client.command(pass_context = True)
-async def help(ctx):
-    await ctx.channel.purge(limit = 1)
-    emb = discord.Embed( 
-        title = 'Навигация по командам :clipboard:',
-        color = 0x7aa13d
-     )
-    
-    emb.add_field( name = '__**Информация**__', value = '''
-        ***!help*** - хелп
-        ***!clock*** - будильник !clock (время сейчас) (время потом) пример: !clock 1923 1924
-    await ctx.author.send(embed = emb)
+
+
 
 
 
 @client.command()
 async def clock(ctx, now, time ):
-    await ctx.author.send(f'Меня создал Nitagas')
     nowtime = int(now)
     vremiya = (['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24'])
     getup = int(time)
@@ -60,8 +49,8 @@ async def clock(ctx, now, time ):
             if end != vremiya:
                 endt = end *60
                 endth = endt *60
-                
-                await asyncio.sleep(endth)
+                endthe = int(endth +720)
+                await asyncio.sleep(endthe)
                 await ctx.author.send(f'Вставай')
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
@@ -74,8 +63,7 @@ async def clock(ctx, now, time ):
             else:
                 sleeptimetwo = end *60
                 endtwo = end *60
-                endthe = int(endtwo +720)
-                await asyncio.sleep(endthe)
+                await asyncio.sleep(endtwo)
                 await ctx.author.send(f'Вставай')
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
@@ -86,6 +74,7 @@ async def clock(ctx, now, time ):
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
         else:
+            
             sleeptimesec = sleeptime *60#минуты
             await asyncio.sleep(sleeptimesec)
             await ctx.author.send(f'Вставай')
@@ -94,7 +83,7 @@ async def clock(ctx, now, time ):
             await asyncio.sleep(1)
             await ctx.author.send(f'Вставай')
             await asyncio.sleep(1)
-            await ctx.author.send(f'Вставай'
+            await ctx.author.send(f'Вставай')
             await asyncio.sleep(1)
             await ctx.author.send(f'Вставай')
     else:
@@ -106,8 +95,8 @@ async def clock(ctx, now, time ):
             if end != vremiya:
                 endt = end *60
                 endth = endt *60
-                
-                await asyncio.sleep(endth)
+                endthe = int(endth +720)
+                await asyncio.sleep(endthe)
                 await ctx.author.send(f'Вставай')
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
@@ -118,11 +107,9 @@ async def clock(ctx, now, time ):
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
             else:
-                
                 endt = end *60
                 endth = endt *60
-                endthe = int(endth +720)
-                await asyncio.sleep(endthe)
+                await asyncio.sleep(endth)
                 await ctx.author.send(f'Вставай')
                 await asyncio.sleep(1)
                 await ctx.author.send(f'Вставай')
@@ -145,14 +132,9 @@ async def clock(ctx, now, time ):
             await asyncio.sleep(1)
             await ctx.author.send(f'Вставай')
 
-@client.command()
-async def status(ctx):
-    await ctx.channel.purge( limit = 1 )
-    while True:
-        await client.change_presence(activity=discord.Game(name='!help))
-        await asyncio.sleep(60)
 
 
-                
+
+
 token= os.environ.get('BOT_TOKEN')
 client.run( token )
