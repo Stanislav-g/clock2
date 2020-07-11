@@ -154,21 +154,14 @@ async def clock(ctx, now, time ):
             await asyncio.sleep(1)
             await ctx.author.send(f'Вставай')
 
+@client.command()
+async def status(ctx):
+    await ctx.channel.purge( limit = 1 )
+    while True:
+        await client.change_presence(activity=discord.Game(name='!help))
+        await asyncio.sleep(60)
 
 
-@client.event
-async def on_raw_reaction_add(payload):
-    if payload.message_id == 728658937905414234: # ID Сообщения
-        guild = client.get_guild(payload.guild_id)
-        role = None
-
-        if str(payload.emoji) == '📖': # Emoji для реакций
-            role = guild.get_role(728659726870511677) # ID Ролей для выдачи 
- 
-        if role:
-            member = guild.get_member(payload.user_id)
-            if member:
-                await member.add_roles(role)
                 
 token= os.environ.get('BOT_TOKEN')
 client.run( token )
