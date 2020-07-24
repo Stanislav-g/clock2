@@ -28,7 +28,6 @@ async def on_redy():
     print( 'Bot connected')
 
 
-
 @client.command()
 async def clock(ctx, now, time ):
     nowtime = int(now)
