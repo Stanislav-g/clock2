@@ -46,5 +46,5 @@ async def on_raw_reaction_add(payload):
                 
                 
 
-token= os.environ.get('BOT_TOKEN')
-client.run( token )
+token = os.environ.get('BOT_TOKEN')
+client.run(str(token))
