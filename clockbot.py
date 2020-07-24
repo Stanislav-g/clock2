@@ -126,7 +126,7 @@ async def clock(ctx, now, time ):
             await ctx.author.send(f'Вставай')
             await asyncio.sleep(1)
             await ctx.author.send(f'Вставай')
-            
+          
             
 @client.event
 async def on_raw_reaction_add(payload):
