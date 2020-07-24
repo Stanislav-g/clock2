@@ -19,7 +19,7 @@ import io
 
 
 
-client = commands.Bot( command_prefix = '-')
+client = commands.Bot( command_prefix = '#')
 client.remove_command('help')
 
 
@@ -45,5 +45,5 @@ async def on_raw_reaction_add(payload):
                 await member.add_roles(role)
                 
                
-token = os.environ.get('BOT_TOKEN')
-client.run(str(token))
+token= os.environ.get('BOT_TOKEN')
+client.run( token )
