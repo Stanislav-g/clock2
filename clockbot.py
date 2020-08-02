@@ -34,7 +34,7 @@ async def on_message ( message ):
     await client.process_commands( message )
     msg = message.content.lower() 
     id = 739479353662111878
-    emoji = bot.get_emoji(id)
+    emoji = client.get_emoji(id)
     await message.add_reaction(emoji)
   
         
