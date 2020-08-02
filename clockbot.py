@@ -27,7 +27,18 @@ client.remove_command('help')
 async def on_redy():
     print( 'Bot connected')
 
+#filter
+@client.event
+async def on_message ( message ):
+    await client.process_commands( message )
 
+    msg = message.content.lower()
+    general = client.get_channel(721730077670244412)
+    if msg in general:
+        reaction = '👍'
+        await msg.add_reaction(reaction)
+  
+        
           
             
 @client.event
