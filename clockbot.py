@@ -33,7 +33,7 @@ async def on_message ( message ):
     channel = client.get_channel( 718108860421767252 )
     await client.process_commands( message )
     msg = message.content.lower() 
-    emj = 👍
+    emj = str(payload.emoji) == '📖'
     await message.add_reaction(emj)
         
           
