@@ -32,9 +32,7 @@ async def on_redy():
 
 @client.event
 async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.author == client.user:
-        return
+    
     if ':green_circle:' in message.content:
         emoji = get(client.get_all_emojis(), name=':green_circle:')
         await client.add_reaction(message, emoji)    
