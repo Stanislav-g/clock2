@@ -31,7 +31,7 @@ async def on_redy():
         
 @client.event
 async def on_message(message):
-if(message.channel.id == "718108860421767252"):
+if message.channel.id == "718108860421767252":
     await bot.add_reaction(message, ":war_tank:552569109108490252")          
             
 @client.event
