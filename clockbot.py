@@ -28,19 +28,20 @@ async def on_redy():
     print( 'Bot connected')
 
 
-        
-@client.event
-async def on_message(message):
-    if message.channel.id == "718108860421767252":
-        await bot.add_reaction(message, ":white_check_mark:739490372924735569")    
-        
+@client.command()
+@commands.has_permissions( administrator = True )
+async def emoji(ctx,reaction:str):
+        message = await ctx.message.channel.fetch_message(id)
+        await message.add_reaction(reaction)        
+
 @client.event
 async def on_message ( message ):
     channel = client.get_channel( 718108860421767252 )
     await client.process_commands( message )
     msg = message.content.lower() 
-    emj = 739490372924735569
-    await message.add_reaction(emj)
+    if msg in channel:
+        emj = str('👍')
+        await channel.send(emj)
     
     
 @client.event
