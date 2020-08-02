@@ -32,8 +32,17 @@ async def on_redy():
 @client.event
 async def on_message(message):
     if message.channel.id == "718108860421767252":
-        await bot.add_reaction(message, ":white_check_mark:739490372924735569")          
-            
+        await bot.add_reaction(message, ":white_check_mark:739490372924735569")    
+        
+@client.event
+async def on_message ( message ):
+    channel = client.get_channel( 718108860421767252 )
+    await client.process_commands( message )
+    msg = message.content.lower() 
+    emj = 739490372924735569
+    await message.add_reaction(emj)
+    
+    
 @client.event
 async def on_raw_reaction_add(payload):
     if payload.message_id == 728658937905414234: # ID Сообщения
