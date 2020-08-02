@@ -32,7 +32,7 @@ async def on_redy():
 async def on_message ( message ):
     await client.process_commands( message )
     msg = message.content.lower() 
-    await ctx.send(f'hi')
+    await send(f'hi')
   
         
           
