@@ -33,7 +33,8 @@ async def on_message ( message ):
     channel = client.get_channel( 718108860421767252 )
     await client.process_commands( message )
     msg = message.content.lower() 
-    await client.add_reaction(message,"\U0001F44D")
+    emj = 👍
+    await message.add_reaction(emj)
         
           
             
