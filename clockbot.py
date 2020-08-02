@@ -33,10 +33,7 @@ async def on_message ( message ):
     channel = client.get_channel( 718108860421767252 )
     await client.process_commands( message )
     msg = message.content.lower() 
-    id = 739479353662111878
-    emoji = client.get_emoji(id)
-    await message.add_reaction(emoji)
-  
+    await client.add_reaction(message,"\U0001F44D")
         
           
             
