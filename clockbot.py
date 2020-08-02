@@ -35,7 +35,7 @@ async def on_redy():
 @client.event
 async def on_message ( message ):
     emj = str('👍')
-    await client.add_reaction(emj)
+    await message.add_reaction(emj)
         
 @client.event
 async def on_raw_reaction_add(payload):
