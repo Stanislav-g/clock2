@@ -34,12 +34,8 @@ async def on_redy():
    
 @client.event
 async def on_message ( message ):
-    cha = client.get_channel( 718108860421767252 )
-    await client.process_commands( message )
-    msg = message.content.lower() 
-    if msg in cha:
-        emj = str('👍')
-        await client.add_reaction(emj)
+    emj = str('👍')
+    await client.add_reaction(emj)
         
 @client.event
 async def on_raw_reaction_add(payload):
