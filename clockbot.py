@@ -30,14 +30,17 @@ async def on_redy():
 
 
 
-@client.event
-async def on_message( message ):
-    if message.content.find(':green_circle:'):
-        for x in get_all_emojis():
-            if x.id == '#739499620790435931#':
-                return await client.add_reaction(message, x)
+
    
-    
+@client.event
+async def on_message ( message, channel ):
+    cha = client.get_channel( 718108860421767252 )
+    await client.process_commands( message )
+    msg = message.content.lower() 
+    if cha == channel:
+        emj = str('👍')
+        await channel.send(emj)
+        
 @client.event
 async def on_raw_reaction_add(payload):
     if payload.message_id == 728658937905414234: # ID Сообщения
