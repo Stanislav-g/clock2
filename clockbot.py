@@ -28,21 +28,16 @@ async def on_redy():
     print( 'Bot connected')
 
 
-@client.command()
-@commands.has_permissions( administrator = True )
-async def emoji(ctx,reaction:str):
-        message = await ctx.message.channel.fetch_message(id)
-        await message.add_reaction(reaction)        
+
 
 @client.event
-async def on_message ( message, channel ):
-    cha = client.get_channel( 718108860421767252 )
-    await client.process_commands( message )
-    msg = message.content.lower() 
-    if cha == channel:
-        emj = str('👍')
-        await channel.send(emj)
-    
+async def on_message(message):
+    # we do not want the bot to reply to itself
+    if message.author == client.user:
+        return
+    if ':green_circle:' in message.content:
+        emoji = get(client.get_all_emojis(), name=':green_circle:')
+        await client.add_reaction(message, emoji)    
     
 @client.event
 async def on_raw_reaction_add(payload):
