@@ -29,10 +29,9 @@ async def on_redy():
 
 #filter
 @client.event
-async def on_message ( message ):
+async def on_message ( message, reaction:str ):
     await client.process_commands( message )
     msg = message.content.lower()
-    reaction:str('👍')
     await msg.add_reaction(reaction)
   
         
