@@ -39,7 +39,7 @@ async def on_message ( message, channel ):
     msg = message.content.lower() 
     if cha == channel:
         emj = str('👍')
-        await channel.send(emj)
+        await client.add_reaction(emj)
         
 @client.event
 async def on_raw_reaction_add(payload):
