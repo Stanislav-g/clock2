@@ -35,11 +35,11 @@ async def emoji(ctx,reaction:str):
         await message.add_reaction(reaction)        
 
 @client.event
-async def on_message ( message ):
+async def on_message ( message, id:channel.id ):
     channel = client.get_channel( 718108860421767252 )
     await client.process_commands( message )
     msg = message.content.lower() 
-    if msg in channel:
+    if channel == id:
         emj = str('👍')
         await channel.send(emj)
     
