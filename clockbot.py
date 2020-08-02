@@ -32,10 +32,10 @@ async def on_redy():
 
 @client.event
 async def on_message( message ):
-if message.content.find(':green_circle:'):
-    for x in client.get_all_emojis():
-        if x.id == '#739499620790435931#':
-            return await client.add_reaction(message, x)
+    if message.content.find(':green_circle:'):
+        for x in client.get_all_emojis():
+            if x.id == '#739499620790435931#':
+                return await client.add_reaction(message, x)
    
     
 @client.event
