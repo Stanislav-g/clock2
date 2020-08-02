@@ -35,9 +35,8 @@ async def on_redy():
 @client.event
 async def on_message ( message ):
     general = client.get_channel(724954151263404086)
-    if message in general:
-        emj = str('👍')
-        await message.add_reaction(emj)
+    emj = str('👍')
+    await general.message.add_reaction(emj)
         
 @client.event
 async def on_raw_reaction_add(payload):
