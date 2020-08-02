@@ -31,11 +31,12 @@ async def on_redy():
 
 
 @client.event
-async def on_message(message):
-    
-    if ':green_circle:' in message.content:
-        emoji = get(client.get_all_emojis(), name=':green_circle:')
-        await client.add_reaction(message, emoji)    
+async def on_message( message ):
+if message.content.find(':green_circle:'):
+    for x in client.get_all_emojis():
+        if x.id == '#739499620790435931#':
+            return await client.add_reaction(message, x)
+   
     
 @client.event
 async def on_raw_reaction_add(payload):
