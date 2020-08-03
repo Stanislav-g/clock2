@@ -19,7 +19,7 @@ import io
 
 
 
-client = commands.Bot( command_prefix = '#')
+client = commands.Bot( command_prefix = '!s')
 client.remove_command('help')
 
 
