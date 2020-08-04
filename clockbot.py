@@ -51,7 +51,19 @@ async def on_raw_reaction_add(payload):
                 await member.add_roles(role)
                 channel = client.get_channel( 738779492339941537 )
                 await channel.send( embed = discord.Embed( description = f'Пользователь {member.mention}, поставил реакцию 📖 в канале правила') )
-                
+    
+
+#autorole
+@client.event
+async def on_member_remove( member ):
+    channel = client.get_channel( 740150902501146675 )
+    await channel.send( embed = discord.Embed( description = f'Пользователь {member.mention}, пользователь покинул нас') )
+
+
+    
+    
+    
+    
 @client.command()
 @commands.has_permissions(administrator = True)
 async def send_m(ctx, member: discord.Member, *, arg):
