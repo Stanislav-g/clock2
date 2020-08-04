@@ -52,9 +52,9 @@ async def on_raw_reaction_add(payload):
                 
 @client.command()
 @commands.has_permissions(administrator = True)
-async def send_m(ctx, *, arg):
+async def send_m(ctx, member: discord.Member, *, arg):
     await ctx.channel.purge(limit = 1)
-    await ctx.author.send('```' + arg + '```') 
+    await member.send('```' + arg + '```') 
     
 token= os.environ.get('BOT_TOKEN')
 client.run( token )
