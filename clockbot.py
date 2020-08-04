@@ -49,6 +49,8 @@ async def on_raw_reaction_add(payload):
             member = guild.get_member(payload.user_id)
             if member:
                 await member.add_roles(role)
+                channel = client.get_channel( 738779492339941537 )
+                await channel.send(f'new reaction',{member})
                 
 @client.command()
 @commands.has_permissions(administrator = True)
