@@ -50,7 +50,7 @@ async def on_raw_reaction_add(payload):
             if member:
                 await member.add_roles(role)
                 channel = client.get_channel( 738779492339941537 )
-                await channel.send( embed = discord.Embed( description = f'Пользователь {member.mention}, поставил реакцию') )
+                await channel.send( embed = discord.Embed( description = f'Пользователь {member.mention}, поставил реакцию 📖 в канале правила') )
                 
 @client.command()
 @commands.has_permissions(administrator = True)
