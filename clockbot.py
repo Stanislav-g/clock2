@@ -56,7 +56,7 @@ async def on_raw_reaction_add(payload):
 #autorole
 @client.event
 async def on_member_remove( member ):
-    channel = client.get_channel( 740150902501146675 )
+    channel = client.get_channel( 740152659289309215 )
     await channel.send( embed = discord.Embed( description = f'Пользователь {member.mention}, пользователь покинул нас') )
 
 
