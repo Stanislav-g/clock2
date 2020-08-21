@@ -27,7 +27,19 @@ client.remove_command('help')
 async def on_redy():
     print( 'Bot connected')      
 
+#autorole
+@client.event
 
+async def on_member_join( member ):
+    channel = client.get_channel( 705461507953262793 )
+
+    role = discord.utils.get( member.guild.roles, id = 705364781753958450 )
+
+    await member.add_roles( role )
+    await channel.send( embed = discord.Embed( description = f'Пользователь {member.mention}, присоеденился к нам! Пригласил {inviter}') )
+    emb = discord.Embed( title = 'INFO', colour = discord.Color.red() )
+    emb.add_field( name = 'ИНФОРМАЦИЯ',value = 'Добро пожаловать на наш сервер, ознакомьтесь с правилами нашего сервера\nПропиши команду -help что-бы узнать мои комманды\nПолезные команды:\n-help\n$help\n\n**ОБЯЗАТЕЛЬНО ПРОЧИТАЙТЕ ПРАВИЛА НА СЕРВЕРЕ И НАЖМИТЕ НА РЕАКЦИЮ 📖**')
+    await member.send( embed = emb )
    
 @client.event
 async def on_message ( message ):
