@@ -43,9 +43,9 @@ async def on_member_join( member ):
    
 @client.event
 async def on_message ( message ):
-    emj = str('👍')
+    emj = str(':good:')
     await message.add_reaction(emj)
-    emji = str('👎')
+    emji = str(':bad:')
     await message.add_reaction(emji)
     
 @client.event
