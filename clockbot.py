@@ -48,6 +48,7 @@ async def on_message ( message ):
     emji = str(':bad:')
     await message.add_reaction(emji)
     
+    
 @client.event
 async def on_raw_reaction_add(payload):
     if payload.message_id == 728658937905414234: # ID Сообщения
